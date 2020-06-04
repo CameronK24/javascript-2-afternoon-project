@@ -134,6 +134,19 @@ var numbersArray = [1,2,34,54,55,34,32,11,19,17,54,66,13];
 
 //Code Here
 
+function divider(numbersArray) {
+  let array = [[], []];
+  for(i = 0; i < numbersArray.length; i++) {
+    if (numbersArray[i] % 2 === 0) {
+      array[0].push(numbersArray[i]);
+    }
+    else if (numbersArray[i] % 2 != 0) {
+      array[1].push(numbersArray[i]);
+    }
+  }
+  return array;
+}
+
 
 
 ////////// PROBLEM 7 //////////
@@ -156,7 +169,15 @@ var getRandomArbitrary = function() {
 
 //Code Here
 
-
+function finder(array) {
+  let randomNumber = getRandomArbitrary();
+  for (x = 0; x < array.length; x++) {
+    if (array[x] === randomNumber) {
+      return true;
+    }
+  }
+  return false;
+}
 
 ////////// PROBLEM 8 //////////
 
@@ -184,7 +205,21 @@ var myGroceryList = ['chips', 'pizza', 'hotpockets', 'MtnDew', 'corndogs'];
 */
 
 //Code Here
-
+function removeItem(myGroceryList, itemToRemove) {
+  if (myGroceryList.length && itemToRemove) {
+    for (x = 0; x < myGroceryList.length; x++) {
+      if (myGroceryList[x] === itemToRemove) {
+        return myGroceryList.splice(x, 1);
+      }
+    }
+  }
+  else if (itemToRemove) {
+    return myGroceryList;
+  }
+  else {
+    return myGroceryList;
+  }
+}
 
 
 ////////// PROBLEM 9 //////////
